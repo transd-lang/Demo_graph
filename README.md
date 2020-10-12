@@ -5,10 +5,9 @@ program "renderer". The renderer does its job of creating a graph of a function 
 stores it in a vector. After the job is done the C++ program obtaines the result vector
 and writes it in a PPM image file.     
 
-This project differs from a more simple Demo_tiny project in many aspects and
-demonstrates many notable points.
+This project differs from a more simple [Demo_tiny](https://github.com/transd-lang/Demo_tiny) project in many aspects and demonstrates many notable points.
 
-The Transd renderer is called not many times, but only once and does all its job in an
+The Transd renderer here is called not many times, but only once and does all its job in an
 internal loop.
 
 The Transd program could be placed in a single file, but for illustrative purposes is
@@ -52,22 +51,30 @@ restrict access.
 
 #### Windows
 
-1. Place the files 'asm.td' and 'getshade.td' from the repository 'src' directory
-to some writable directory. (Or leave them in place if their current directory is
-writable.) Into this directory the output file of the program will be written.
+1. Ensure that the directory 'renderer' from the Demo_graph distribution is writable.
+Into this directory the output file of the program will be written.
 
-2. Edit the 'asm.td' file and specify the path to the 'getshade.td' file.
-
-3. Edit the 'main.cpp' file: locate the following line at the top of the file:
+2. Edit the 'main.cpp' file: locate the following line at the top of the file:
 
 `std::string workingDir = "Y:\\your\\working\\directory\\"`
 
-and change it by specifying your output directory (with trailing backslash).
+and change it by specifying the full path of the 'renderer' directory.
 
-4. Build the solution and run the executable. Check the image in the output "graph.ppm"
+3. Build the solution and run the executable. Check the image in the output "graph.ppm"
 file. PPM image files can be opened e.g. with LibreOffice, GIMP, etc. Report of any
-issues here: https://github.com/transd-lang/Demo_tiny/issues
+issues here: https://github.com/transd-lang/Demo_graph/issues
 
 #### Linux
 
 To be written...
+
+### Result
+
+The result of the program (the graph of the quadratic function) can be seen here:
+[rendered image](https://transd-lang.github.io/img/Demo_graph.jpg). 
+
+You can try and tweak the renderer's definition in the 'quad.td' file for rendering other
+images.
+
+All issue reports, questions and ideas are welcome here: 
+https://github.com/transd-lang/Demo_graph/issues  
